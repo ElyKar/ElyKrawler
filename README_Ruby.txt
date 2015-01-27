@@ -20,9 +20,12 @@ L'algo est très simple, le reste du programme est juste là pour garder une
 trace de par où on est passé, pour pouvoir écrire le .gefx
 
 Mon avis perso : Ruby est vachement plus cool que le C, le Java, le perl
-ou le python. La syntaxe n'est pas si simple si on veut réaliser des opérations
+ou le python. En plus, il est vraiment simple à prendre en main :
+C'est mon deuxième programme en Ruby, le premier étant Hello world
+
+La syntaxe n'est pas si simple si on veut réaliser des opérations
 pointues, mais c'est assez naturel au final.
-Les variables ne sont pas typées, ça simplifie énormément la syntaxe, pas de
+Les variables ne sont pas typées, ça simplifie énormément les choses, pas de
 cast foireux à faire (et donc pas de generics).
 La syntaxe fonctionnelle est une tuerie, tout devient beaucoup plus court
 (certainement pas plus simple).
