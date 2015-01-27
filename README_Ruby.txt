@@ -1,31 +1,33 @@
-Le programme est décomposé en 3 modules :
+Ecrit par Tristan Claverie
+
+Le programme est dÃ©composÃ© en 3 modules :
 -Queue : une file FIFO basique
 -TernarySearchTree : Un arbre ternaire de recherche, plus efficace qu'une
 HashMap pour le stockage de couples (String, valeur).
--Gefx : Pour faciliter l'écriture du fichier de sortie au format .gefx
+-Gefx : Pour faciliter l'Ã©criture du fichier de sortie au format .gefx
 
 L'algorithme est le suivant :
 
-initialisation : on met toutes les urls de départ dans la Queue q
-tant que q n'est pas vide ou qu'on est pas arrivés à NMAX noeuds
-on retire le premier élément e de q
-Si on n'a pas visité cette page :
-   On récupère la page correspndant à l'url e (requête http)
-   On parse la page pour trouver les urls, et on les place à la fin de q
+initialisation : on met toutes les urls de dÃ©part dans la Queue q
+tant que q n'est pas vide ou qu'on est pas arrivÃ©s Ã  NMAX noeuds
+on retire le premier Ã©lÃ©ment e de q
+Si on n'a pas visitÃ© cette page :
+   On rÃ©cupÃ¨re la page correspndant Ã  l'url e (requÃªte http)
+   On parse la page pour trouver les urls, et on les place Ã  la fin de q
 on recommence
 
-L'algo est très simple, le reste du programme est juste là pour garder une
-trace de par où on est passé, pour pouvoir écrire le .gefx
+L'algo est trÃ¨s simple, le reste du programme est juste lÃ  pour garder une
+trace de par oÃ¹ on est passÃ©, pour pouvoir Ã©crire le .gefx
 
 Mon avis perso : Ruby est vachement plus cool que le C, le Java, le perl
-ou le python. La syntaxe n'est pas si simple si on veut réaliser des opérations
+ou le python. La syntaxe n'est pas si simple si on veut rÃ©aliser des opÃ©rations
 pointues, mais c'est assez naturel au final.
-Les variables ne sont pas typées, ça simplifie énormément la syntaxe, pas de
-cast foireux à faire (et donc pas de generics).
+Les variables ne sont pas typÃ©es, Ã§a simplifie Ã©normÃ©ment la syntaxe, pas de
+cast foireux Ã  faire (et donc pas de generics).
 La syntaxe fonctionnelle est une tuerie, tout devient beaucoup plus court
 (certainement pas plus simple).
-Les itérateurs sont extrêmement puissants et faciles à implémenter, il faut
-juste implémenter une fonction each (exemples dans Queue et dans TernarySearchTree)
-Le passage de blocs de code à l'air génial, mais j'ai pas eu l'opportunité de
+Les itÃ©rateurs sont extrÃªmement puissants et faciles Ã  implÃ©menter, il faut
+juste implÃ©menter une fonction each (exemples dans Queue et dans TernarySearchTree)
+Le passage de blocs de code Ã  l'air gÃ©nial, mais j'ai pas eu l'opportunitÃ© de
 le tester ici
-Système de gestion d'exception présent.
+SystÃ¨me de gestion d'exception prÃ©sent.
