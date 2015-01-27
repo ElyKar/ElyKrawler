@@ -56,8 +56,8 @@ while ((!q.isEmpty?) && $_V < $_NMAX)
 			}
 		rescue
 		end
-		if (res.body =~ /coin|nakamoto|finney|szabo/)
-			res.body.scan(/https?:\/\/[[\w]+.]+[\/[\w]+\/]*/).each {|match| #complément :[\/[\w]+\/]*
+		res.body.scan(/https?:\/\/[[\w]+.]+[\/[\w]+\/]*/).each {|match| #complément :[\/[\w]+\/]*
+			if (match !~ /facebook|youtube|linkedin|google|github|twitter|reddit|\.edu|wiki/) then
 				w = tree.get(match)
 					if !w then
 						w = Vertex.new($_V)
@@ -68,8 +68,8 @@ while ((!q.isEmpty?) && $_V < $_NMAX)
 				if (!edges[v.id].include?(w.id)) then edges[v.id].push(w.id) end
 				v.links+=1
 				q.enqueue(match)
-			}
-		end
+			end
+		}
 	end
 end
 
