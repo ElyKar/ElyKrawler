@@ -42,7 +42,7 @@ File.open(entries, "r") {|f|
 	f.close
 }
 puts q.size
-while ((!q.isEmpty?) && $_V < $_NMAX)
+while (!q.isEmpty?)
 	site = q.dequeue
 	v = tree.get(site)
 	if (!v.marked) then
@@ -56,18 +56,23 @@ while ((!q.isEmpty?) && $_V < $_NMAX)
 			}
 		rescue
 		end
+		bool = $_V < $_NMAX
 		res.body.scan(/https?:\/\/[[\w]+.]+[\/[\w]+\/]*/).each {|match| #complément :[\/[\w]+\/]*
 			if (match !~ /facebook|youtube|linkedin|google|github|twitter|reddit|\.edu|wiki/) then
 				w = tree.get(match)
-					if !w then
+					if (!w && bool) then
 						w = Vertex.new($_V)
 						$_V+=1
 						tree.put(match, w)
 						if ($_V%100==0) then puts $_V end
+					else
+						w = Vertex.new($_NMAX+1)
 					end
-				if (!edges[v.id].include?(w.id)) then edges[v.id].push(w.id) end
-				v.links+=1
-				q.enqueue(match)
+				if (w.id <= $_NMAX && (!edges[v.id].include?(w.id))) then
+					edges[v.id].push(w.id)
+					v.links+=1
+					q.enqueue(match)
+				end
 			end
 		}
 	end
