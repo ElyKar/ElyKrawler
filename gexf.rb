@@ -12,7 +12,8 @@ class Gexf
 	def header
 		date = Time.now
 		@f.print <<OUT
-<gexf>
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.1draft" version="1.1" xmlns:viz="http://www.gexf.net/1.1draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.1draft http://www.gexf.net/1.1draft/gexf.xsd">
   <meta lastmodifieddate="#{date}">
     <creator>ElyKrawler</creator>
     <description>Reachable websites from text input</description>

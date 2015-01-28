@@ -74,7 +74,7 @@ while ((!q.isEmpty?) && $_V < $_NMAX)
 end
 
 
-g = Gexf.new("E:\\Tristan\\Ruby\\output.gefx")
+g = Gexf.new("E:\\Tristan\\Ruby\\output.gexf")
 g.header
 tree.each{|url, line|
 	g.node(url, line)
