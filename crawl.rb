@@ -60,14 +60,16 @@ while (!q.isEmpty?)
 		res.body.scan(/https?:\/\/[[\w]+.]+[\/[\w]+\/]*/).each {|match| #complément :[\/[\w]+\/]*
 			if (match !~ /facebook|youtube|linkedin|google|github|twitter|reddit|\.edu|wiki/) then
 				w = tree.get(match)
-					if (!w && bool) then
+				if !w then
+					if bool then
 						w = Vertex.new($_V)
 						$_V+=1
 						tree.put(match, w)
-						if ($_V%100==0) then puts $_V end
 					else
 						w = Vertex.new($_NMAX+1)
 					end
+				end
+				
 				if (w.id <= $_NMAX && (!edges[v.id].include?(w.id))) then
 					edges[v.id].push(w.id)
 					v.links+=1
@@ -75,6 +77,7 @@ while (!q.isEmpty?)
 				end
 			end
 		}
+		if (v.id%100==0) then puts "#{v.id} noeuds traites" end
 	end
 end
 
